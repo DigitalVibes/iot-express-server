@@ -1,0 +1,22 @@
+{
+  "name": "iot-express-server",
+  "version": "1.0.0",
+  "description": "Socket Server to talk with a Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "express",
+    "IoT",
+    "sockets",
+    "RaspberryPi"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.5",
+    "jquery": "^3.2.1",
+    "socket.io": "^2.0.3"
+  }
+}

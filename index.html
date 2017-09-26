@@ -1,0 +1,31 @@
+<!doctype html>  
+<html lang="en">  
+    <head>
+
+    </head>
+    <body>
+        <h1>Bulb Control</h1>
+        <form id="form">
+            <input type="button" value="On"/>
+            <input type="button" value="Off"/>
+        </form>
+         <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>  
+        var socket = io.connect(location.href);
+        socket.on('connect', function(data) {
+            socket.emit('join', 'Hello World from client');
+        });
+
+        socket.on('broad', function(data) {
+            $('#future').append(data+ "<br/>");
+        });
+        $('#form input[value="On"]').click(function(){
+            socket.emit('bulb_control', 'on');
+        });
+        $('#form input[value="Off"]').click(function(){
+            socket.emit('bulb_control', 'off');
+        });
+        </script>
+    </body>
+</html> 
